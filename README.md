@@ -42,6 +42,8 @@ The app is built with an MVVM-style structure using Provider for state managemen
 
 The project follows a layered MVVM-style structure:
 
+![Trip Mate architecture diagram](docs/assets/trip-mate-architecture.svg)
+
 ```text
 lib/
   main.dart                       App entry point
@@ -115,29 +117,3 @@ flutter run --dart-define=GEOAPIFY_API_KEY=your-geoapify-api-key
 ```
 
 The app does not read `.env` automatically; `.env.example` documents the required local value, while `--dart-define` is what the Flutter runtime uses.
-
-## Tests
-
-Run the unit and widget tests:
-
-```bash
-flutter test
-```
-
-The included tests cover:
-
-- trip form validation
-- planner overlap detection
-- empty-result repository behavior
-
-## Security Notes
-
-- Real `.env` files are ignored.
-- `android/app/google-services.json` is ignored.
-- `ios/Runner/GoogleService-Info.plist` is ignored.
-- Geoapify API keys are supplied at runtime with `--dart-define`.
-- Local SDK paths such as `android/local.properties` are ignored.
-
-## Project Status
-
-This is a portfolio version of the Trip Mate mobile application. The source code, screenshots, tests, and setup templates are included, while reports, private Firebase configuration, local SDK paths, and generated build artifacts are excluded.
