@@ -1,157 +1,166 @@
-<svg width="1280" height="820" viewBox="0 0 1280 820" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="1280" height="840" viewBox="0 0 1280 840" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Trip Mate Architecture Diagram</title>
-  <desc id="desc">Layered Flutter architecture showing UI screens, Provider view models, repository and service classes, and external integrations used by Trip Mate.</desc>
+  <desc id="desc">Professional layered Flutter architecture diagram showing UI screens, Provider view models, data repositories, services, and external integrations used by Trip Mate.</desc>
+
   <defs>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    <filter id="softShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#111827" flood-opacity="0.08"/>
     </filter>
-    <marker id="arrow" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto">
-      <path d="M1 1L12 6.5L1 12V1Z" fill="#475569"/>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L11 6L1 11V1Z" fill="#4b5563"/>
     </marker>
     <style>
-      .bg { fill: #f8fafc; }
-      .title { fill: #0f172a; font: 700 34px Arial, Helvetica, sans-serif; }
-      .subtitle { fill: #475569; font: 400 17px Arial, Helvetica, sans-serif; }
-      .lane { fill: #ffffff; stroke-width: 2; filter: url(#shadow); }
-      .lane-title { fill: #ffffff; font: 700 18px Arial, Helvetica, sans-serif; }
-      .section-label { fill: #334155; font: 700 15px Arial, Helvetica, sans-serif; }
-      .body { fill: #334155; font: 400 14px Arial, Helvetica, sans-serif; }
-      .small { fill: #64748b; font: 400 12px Arial, Helvetica, sans-serif; }
-      .chip-text { fill: #0f172a; font: 700 13px Arial, Helvetica, sans-serif; }
-      .arrow { stroke: #475569; stroke-width: 2.4; marker-end: url(#arrow); }
-      .dashed { stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 8 7; marker-end: url(#arrow); }
+      .bg { fill: #f7f8fa; }
+      .title { fill: #111827; font: 700 32px Arial, Helvetica, sans-serif; }
+      .subtitle { fill: #4b5563; font: 400 16px Arial, Helvetica, sans-serif; }
+      .card { fill: #ffffff; stroke: #d1d5db; stroke-width: 1.5; filter: url(#softShadow); }
+      .header { fill: #1f2937; }
+      .headerText { fill: #ffffff; font: 700 16px Arial, Helvetica, sans-serif; }
+      .section { fill: #111827; font: 700 13px Arial, Helvetica, sans-serif; }
+      .body { fill: #374151; font: 400 12.5px Arial, Helvetica, sans-serif; }
+      .small { fill: #6b7280; font: 400 11.5px Arial, Helvetica, sans-serif; }
+      .chip { fill: #f9fafb; stroke: #d1d5db; stroke-width: 1.2; }
+      .chipTitle { fill: #111827; font: 700 12px Arial, Helvetica, sans-serif; }
+      .chipBody { fill: #4b5563; font: 400 10.8px Arial, Helvetica, sans-serif; }
+      .arrow { stroke: #4b5563; stroke-width: 2; marker-end: url(#arrow); fill: none; }
+      .softArrow { stroke: #9ca3af; stroke-width: 1.8; stroke-dasharray: 7 7; marker-end: url(#arrow); fill: none; }
+      .label { fill: #4b5563; font: 700 10.5px Arial, Helvetica, sans-serif; letter-spacing: 0.2px; }
+      .noteTitle { fill: #111827; font: 700 13px Arial, Helvetica, sans-serif; }
+      .noteText { fill: #374151; font: 400 12px Arial, Helvetica, sans-serif; }
     </style>
   </defs>
 
-  <rect class="bg" width="1280" height="820" rx="0"/>
-  <text class="title" x="52" y="70">Trip Mate Travel Planner Architecture</text>
-  <text class="subtitle" x="52" y="102">MVVM-style Flutter app with Provider, repositories, services, and travel APIs.</text>
+  <rect class="bg" width="1280" height="840"/>
+
+  <text class="title" x="64" y="68">Trip Mate Travel Planner Architecture</text>
+  <text class="subtitle" x="64" y="96">Layered Flutter app using Provider, repositories, services, Firebase, and travel APIs.</text>
 
   <!-- UI layer -->
-  <rect class="lane" x="44" y="154" width="250" height="452" rx="18" stroke="#2563eb"/>
-  <rect x="44" y="154" width="250" height="58" rx="18" fill="#2563eb"/>
-  <path d="M44 194H294V212H44V194Z" fill="#2563eb"/>
-  <text class="lane-title" x="69" y="190">Flutter UI Layer</text>
+  <rect class="card" x="56" y="144" width="248" height="454" rx="14"/>
+  <path class="header" d="M56 158C56 150.268 62.268 144 70 144H290C297.732 144 304 150.268 304 158V196H56V158Z"/>
+  <text class="headerText" x="80" y="177">Flutter UI Layer</text>
 
-  <text class="section-label" x="69" y="247">App shell</text>
-  <text class="body" x="69" y="274">main.dart</text>
-  <text class="body" x="69" y="298">app.dart</text>
-  <text class="small" x="69" y="322">Provider setup, theme, routes</text>
+  <text class="section" x="80" y="225">App shell</text>
+  <text class="body" x="80" y="250">main.dart</text>
+  <text class="body" x="80" y="271">app.dart</text>
+  <text class="small" x="80" y="294">Provider setup, theme, navigation</text>
 
-  <text class="section-label" x="69" y="368">Screens</text>
-  <text class="body" x="69" y="395">Auth, home, discover</text>
-  <text class="body" x="69" y="419">Trip planning, planner</text>
-  <text class="body" x="69" y="443">Saved places, countries</text>
-  <text class="body" x="69" y="467">Profile and settings</text>
+  <text class="section" x="80" y="338">Screens</text>
+  <text class="body" x="80" y="363">Auth, home, discover</text>
+  <text class="body" x="80" y="384">Trip planning, planner</text>
+  <text class="body" x="80" y="405">Saved places, countries</text>
+  <text class="body" x="80" y="426">Profile and settings</text>
 
-  <text class="section-label" x="69" y="514">Reusable widgets</text>
-  <text class="body" x="69" y="541">ui/components</text>
-  <text class="body" x="69" y="565">ui/helpers</text>
+  <text class="section" x="80" y="474">Reusable widgets</text>
+  <text class="body" x="80" y="499">ui/components</text>
+  <text class="body" x="80" y="520">ui/helpers</text>
+
+  <rect class="chip" x="80" y="548" width="200" height="28" rx="8"/>
+  <text class="chipBody" x="96" y="567">User interactions and UI state</text>
 
   <!-- View model layer -->
-  <rect class="lane" x="354" y="120" width="284" height="520" rx="18" stroke="#7c3aed"/>
-  <rect x="354" y="120" width="284" height="58" rx="18" fill="#7c3aed"/>
-  <path d="M354 160H638V178H354V160Z" fill="#7c3aed"/>
-  <text class="lane-title" x="382" y="156">Provider ViewModels</text>
+  <rect class="card" x="356" y="144" width="264" height="454" rx="14"/>
+  <path class="header" d="M356 158C356 150.268 362.268 144 370 144H606C613.732 144 620 150.268 620 158V196H356V158Z"/>
+  <text class="headerText" x="380" y="177">Provider ViewModels</text>
 
-  <text class="section-label" x="382" y="214">State and business flow</text>
-  <text class="body" x="382" y="244">AuthViewModel</text>
-  <text class="body" x="382" y="270">TripsViewModel</text>
-  <text class="body" x="382" y="296">DiscoverViewModel</text>
-  <text class="body" x="382" y="322">PlannerViewModel</text>
-  <text class="body" x="382" y="348">SavedViewModel</text>
-  <text class="body" x="382" y="374">CountriesViewModel</text>
-  <text class="body" x="382" y="400">RecommendedCountriesViewModel</text>
-  <text class="body" x="382" y="426">ThemeViewModel</text>
+  <text class="section" x="380" y="225">State and business flow</text>
+  <text class="body" x="380" y="250">AuthViewModel</text>
+  <text class="body" x="380" y="271">TripsViewModel</text>
+  <text class="body" x="380" y="292">DiscoverViewModel</text>
+  <text class="body" x="380" y="313">PlannerViewModel</text>
+  <text class="body" x="380" y="334">SavedViewModel</text>
+  <text class="body" x="380" y="355">CountriesViewModel</text>
+  <text class="body" x="380" y="376">RecommendedCountriesVM</text>
+  <text class="body" x="380" y="397">ThemeViewModel</text>
 
-  <rect x="382" y="472" width="228" height="102" rx="12" fill="#f5f3ff" stroke="#c4b5fd"/>
-  <text class="chip-text" x="406" y="506">Provider responsibilities</text>
-  <text class="body" x="406" y="532">Expose UI state</text>
-  <text class="body" x="406" y="556">Run validation and actions</text>
+  <rect class="chip" x="380" y="435" width="216" height="96" rx="10"/>
+  <text class="chipTitle" x="398" y="462">Responsibilities</text>
+  <text class="body" x="398" y="486">Expose loading, data, and errors</text>
+  <text class="body" x="398" y="507">Run validation and user actions</text>
 
-  <!-- Data layer -->
-  <rect class="lane" x="698" y="96" width="284" height="568" rx="18" stroke="#059669"/>
-  <rect x="698" y="96" width="284" height="58" rx="18" fill="#059669"/>
-  <path d="M698 136H982V154H698V136Z" fill="#059669"/>
-  <text class="lane-title" x="726" y="132">Domain and Data Layer</text>
+  <rect class="chip" x="380" y="548" width="216" height="28" rx="8"/>
+  <text class="chipBody" x="398" y="567">Concrete repositories are created here</text>
 
-  <text class="section-label" x="726" y="192">Models</text>
-  <text class="body" x="726" y="219">Trip, Place, PlannerItem</text>
-  <text class="body" x="726" y="243">Country, UserProfile</text>
+  <!-- Domain and data layer -->
+  <rect class="card" x="672" y="144" width="306" height="454" rx="14"/>
+  <path class="header" d="M672 158C672 150.268 678.268 144 686 144H964C971.732 144 978 150.268 978 158V196H672V158Z"/>
+  <text class="headerText" x="696" y="177">Domain and Data Layer</text>
 
-  <text class="section-label" x="726" y="290">Repository contracts</text>
-  <text class="body" x="726" y="317">TripsRepository</text>
-  <text class="body" x="726" y="341">PlacesRepository</text>
-  <text class="body" x="726" y="365">PlannerRepository</text>
-  <text class="body" x="726" y="389">SavedRepository</text>
-  <text class="body" x="726" y="413">CountriesRepository</text>
+  <text class="section" x="696" y="225">Models</text>
+  <text class="body" x="696" y="250">Trip, Place, PlannerItem</text>
+  <text class="body" x="696" y="271">Country, UserProfile</text>
 
-  <text class="section-label" x="726" y="460">Services and helpers</text>
-  <text class="body" x="726" y="487">LocationService</text>
-  <text class="body" x="726" y="511">ReverseGeocodingService</text>
-  <text class="body" x="726" y="535">Trip validation helpers</text>
-  <text class="body" x="726" y="559">Planner overlap checks</text>
+  <text class="section" x="696" y="315">Repository contracts</text>
+  <text class="body" x="696" y="340">TripsRepository</text>
+  <text class="body" x="696" y="361">PlacesRepository</text>
+  <text class="body" x="696" y="382">PlannerRepository</text>
+  <text class="body" x="696" y="403">SavedRepository</text>
+  <text class="body" x="696" y="424">CountriesRepository</text>
+  <text class="body" x="696" y="445">UserProfileRepository</text>
 
-  <rect x="726" y="595" width="228" height="42" rx="12" fill="#ecfdf5" stroke="#86efac"/>
-  <text class="chip-text" x="746" y="621">Firebase, Geoapify, REST implementations</text>
+  <text class="section" x="696" y="489">Services and helpers</text>
+  <text class="body" x="696" y="514">LocationService</text>
+  <text class="body" x="696" y="535">ReverseGeocodingService</text>
+  <text class="body" x="696" y="556">Trip validation helpers</text>
+  <text class="body" x="696" y="577">Planner overlap checks</text>
 
-  <!-- External integrations -->
-  <rect class="lane" x="1040" y="56" width="196" height="650" rx="18" stroke="#f59e0b"/>
-  <rect x="1040" y="56" width="196" height="58" rx="18" fill="#f59e0b"/>
-  <path d="M1040 96H1236V114H1040V96Z" fill="#f59e0b"/>
-  <text class="lane-title" x="1064" y="92">External Services</text>
+  <!-- External services -->
+  <rect class="card" x="1034" y="112" width="190" height="574" rx="14"/>
+  <path class="header" d="M1034 126C1034 118.268 1040.268 112 1048 112H1210C1217.732 112 1224 118.268 1224 126V164H1034V126Z"/>
+  <text class="headerText" x="1058" y="145">External Services</text>
 
-  <rect x="1064" y="146" width="148" height="70" rx="12" fill="#fef2f2" stroke="#fecaca"/>
-  <text class="chip-text" x="1086" y="174">Firebase Auth</text>
-  <text class="small" x="1086" y="195">Email/password users</text>
+  <rect class="chip" x="1058" y="188" width="142" height="58" rx="9"/>
+  <text class="chipTitle" x="1078" y="215">Firebase Auth</text>
+  <text class="chipBody" x="1078" y="233">Email/password users</text>
 
-  <rect x="1064" y="236" width="148" height="96" rx="12" fill="#fef2f2" stroke="#fecaca"/>
-  <text class="chip-text" x="1086" y="264">Cloud Firestore</text>
-  <text class="small" x="1086" y="285">trips</text>
-  <text class="small" x="1086" y="304">plannerItems</text>
-  <text class="small" x="1086" y="323">savedPlaces, profiles</text>
+  <rect class="chip" x="1058" y="266" width="142" height="82" rx="9"/>
+  <text class="chipTitle" x="1078" y="293">Cloud Firestore</text>
+  <text class="chipBody" x="1078" y="311">trips, plannerItems</text>
+  <text class="chipBody" x="1078" y="329">savedPlaces, profiles</text>
 
-  <rect x="1064" y="352" width="148" height="82" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
-  <text class="chip-text" x="1086" y="380">Geoapify APIs</text>
-  <text class="small" x="1086" y="401">Places discovery</text>
-  <text class="small" x="1086" y="420">Reverse geocoding</text>
+  <rect class="chip" x="1058" y="368" width="142" height="76" rx="9"/>
+  <text class="chipTitle" x="1078" y="395">Geoapify APIs</text>
+  <text class="chipBody" x="1078" y="413">Places discovery</text>
+  <text class="chipBody" x="1078" y="431">Reverse geocoding</text>
 
-  <rect x="1064" y="454" width="148" height="70" rx="12" fill="#f0fdf4" stroke="#bbf7d0"/>
-  <text class="chip-text" x="1086" y="482">REST Countries</text>
-  <text class="small" x="1086" y="503">Country details</text>
+  <rect class="chip" x="1058" y="464" width="142" height="58" rx="9"/>
+  <text class="chipTitle" x="1078" y="491">REST Countries</text>
+  <text class="chipBody" x="1078" y="509">Country details</text>
 
-  <rect x="1064" y="544" width="148" height="64" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
-  <text class="chip-text" x="1086" y="572">Device GPS</text>
-  <text class="small" x="1086" y="593">Geolocator</text>
+  <rect class="chip" x="1058" y="542" width="142" height="58" rx="9"/>
+  <text class="chipTitle" x="1078" y="569">Device GPS</text>
+  <text class="chipBody" x="1078" y="587">Geolocator</text>
 
-  <rect x="1064" y="628" width="148" height="52" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
-  <text class="chip-text" x="1086" y="660">SharedPreferences</text>
+  <rect class="chip" x="1058" y="620" width="142" height="42" rx="9"/>
+  <text class="chipTitle" x="1078" y="646">SharedPreferences</text>
 
-  <!-- Flow arrows -->
-  <path class="arrow" d="M294 380H354"/>
-  <text class="small" x="307" y="362">actions</text>
-  <text class="small" x="307" y="396">state</text>
+  <!-- Main flow arrows -->
+  <path class="arrow" d="M304 370H356"/>
 
-  <path class="arrow" d="M638 380H698"/>
-  <text class="small" x="650" y="362">use cases</text>
-  <text class="small" x="650" y="396">queries</text>
+  <path class="arrow" d="M620 370H672"/>
 
-  <path class="arrow" d="M982 190H1040"/>
-  <path class="arrow" d="M982 288H1040"/>
-  <path class="arrow" d="M982 394H1040"/>
-  <path class="arrow" d="M982 488H1040"/>
-  <path class="arrow" d="M982 576H1040"/>
-  <path class="dashed" d="M638 610C760 742 916 744 1064 664"/>
+  <!-- External integration arrows routed through the gutter -->
+  <path class="softArrow" d="M620 230C654 230 642 120 742 120H1010V217H1058"/>
+  <text class="label" x="806" y="110">AuthViewModel - Firebase Auth</text>
 
-  <text class="small" x="1011" y="176">auth</text>
-  <text class="small" x="1003" y="274">data</text>
-  <text class="small" x="998" y="381">places</text>
-  <text class="small" x="1000" y="475">countries</text>
-  <text class="small" x="1003" y="563">location</text>
-  <text class="small" x="742" y="728">ThemeViewModel stores local display preferences</text>
+  <path class="arrow" d="M978 307H1058"/>
+  <text class="label" x="1002" y="293">DATA</text>
 
-  <rect x="52" y="710" width="1176" height="76" rx="14" fill="#e2e8f0" stroke="#cbd5e1"/>
-  <text class="section-label" x="78" y="735">Primary data flow</text>
-  <text class="body" x="78" y="759">Screens call Provider view models, and view models coordinate repositories and services.</text>
-  <text class="body" x="78" y="780">Repository implementations communicate with Firebase, Geoapify, REST Countries, GPS, and local preferences.</text>
+  <path class="arrow" d="M978 406H1058"/>
+  <text class="label" x="996" y="392">PLACES</text>
+
+  <path class="arrow" d="M978 493H1058"/>
+  <text class="label" x="991" y="479">COUNTRIES</text>
+
+  <path class="arrow" d="M978 571H1058"/>
+  <text class="label" x="1000" y="557">LOCATION</text>
+
+  <path class="softArrow" d="M596 562C708 680 886 700 1058 641"/>
+  <text class="label" x="742" y="708">ThemeViewModel - SharedPreferences</text>
+
+  <!-- Summary note -->
+  <rect x="64" y="724" width="1160" height="76" rx="12" fill="#eef0f3" stroke="#d1d5db" stroke-width="1.2"/>
+  <text class="noteTitle" x="88" y="751">Primary data flow</text>
+  <text class="noteText" x="88" y="774">Screens call Provider view models. View models coordinate repositories, services, validation helpers, and local state.</text>
+  <text class="noteText" x="88" y="794">Repository and service implementations communicate with Firebase, Geoapify, REST Countries, device GPS, and local preferences.</text>
 </svg>
